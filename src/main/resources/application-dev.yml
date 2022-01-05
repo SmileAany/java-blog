@@ -1,0 +1,16 @@
+server:
+  port: 8080
+  address: localhost
+  servlet:
+    context-path: /api
+
+spring:
+  datasource:
+    url: mysql://localhost:3306/crm?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+
+mybatis:
+  mapper-locations:
+    - classpath:dao/*.xml
+    - classpath*:com/**/mapper/*.xml

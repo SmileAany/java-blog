@@ -1,0 +1,18 @@
+server:
+  port: 8080
+  address: localhost
+  servlet:
+    context-path: /api
+
+spring:
+  datasource:
+    url: mysql://localhost:3306/javaCrm?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis:
+  type-aliases-super-type: com.smile.blog.dao
+  mapper-locations:
+    - classpath*:mapper/*Mapper.xml
