@@ -9,16 +9,16 @@
         <result property="email" column="email" jdbcType="VARCHAR"/>
         <result property="phone" column="phone" jdbcType="VARCHAR"/>
         <result property="status" column="status" jdbcType="INTEGER"/>
-        <result property="createdAt" column="created_at" jdbcType="Timestamp"/>
-        <result property="updatedAt" column="updated_at" jdbcType="Timestamp"/>
-        <result property="deletedAt" column="deleted_at" jdbcType="Timestamp"/>
+        <result property="createdAt" column="created_at" jdbcType="TIMESTAMP"/>
+        <result property="updatedAt" column="updated_at" jdbcType="TIMESTAMP"/>
+        <result property="deletedAt" column="deleted_at" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <!--查询单个-->
     <select id="queryUserByUsernameAndPassword" resultMap="UsersMap">
         SELECT
-            id, name, age
-        FROM mybatis.student
+            id, name
+        FROM users
         WHERE username = #{username}
         AND password = #{password}
     </select>

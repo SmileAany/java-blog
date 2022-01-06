@@ -1,9 +1,8 @@
 package com.smile.blog.entity;
 
-import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class Users implements Serializable {
+public class Users{
     private static final long serialVersionUID = -91969758749726312L;
 
     /**

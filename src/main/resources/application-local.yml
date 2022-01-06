@@ -6,13 +6,19 @@ server:
 
 spring:
   datasource:
-    url: mysql://localhost:3306/javaCrm?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8
+    url: jdbc:mysql://127.0.0.1:3306/crm?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
+  rabbitmq:
+    host: 127.0.0.1
+    port: 15672
+    username: guest
+    password: guest
+    virtual-host: /
 
 mybatis:
-  type-aliases-super-type: com.smile.blog.dao
+  type-aliases-package: com.smile.blog.entity
   mapper-locations:
-    - classpath*:mapper/*Mapper.xml
+    - classpath:mapper/*Mapper.xml

@@ -1,21 +1,24 @@
 package com.smile.blog.controller;
 
+import java.util.List;
+import javax.annotation.Resource;
 import com.smile.blog.entity.Users;
 import com.smile.blog.service.UsersService;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
-import java.util.List;
-
+@RestController
 public class AuthController {
     @Resource
     private UsersService usersService;
 
-    @GetMapping("auth/login")
-    public String accountLogin()
+    /**
+     * 用户登录
+     * @return
+     */
+    @PostMapping("/auth/login")
+    public List<Users> accountLogin()
     {
-        usersService.queryUserByUsernameAndPassword("smile","admin");
-
-        return "";
+        return usersService.queryUserByUsernameAndPassword("smile","admin");
     }
 }
